@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+  <title th:text="${title}"></title>
+</head>
+
+<body>
+  <div layout:fragment="content">
+    <h1>Todo List</h1>
+    <ul class="list-group">
+      <li class="list-group-item" th:each="todo: ${todos}">
+        <span class="todo-title" th:text="${todo.title}"></span>
+        <span class="todo-status" th:text="${todo.isCompleted}"></span>
+        <td><a th:href="@{/todos/update/{id}(id=${todo.id})}">Edit</a></td>
+        <td><a th:href="@{/todos/delete/{id}(id=${todo.id})}">Delete</a></td>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

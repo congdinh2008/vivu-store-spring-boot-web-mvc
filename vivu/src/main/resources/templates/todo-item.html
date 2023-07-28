@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+
+<head>
+  <title th:text="${title}"></title>
+</head>
+
+<body>
+  <div layout:fragment="content">
+    <h1>Todo List</h1>
+    <div class="card">
+      <div class="card-body">
+        <span class="todo-title" th:text="${todo.title}"></span>
+        <span class="todo-status" th:text="${todo.isCompleted}"></span>
+      </div>
+    </div>
+    </ul>
+  </div>
+</body>
+
+</html>
